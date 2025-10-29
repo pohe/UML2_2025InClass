@@ -9,17 +9,27 @@ namespace PizzaLibrary.Models
 {
     public class MenuItem : IMenuItem
     {
-        public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private static int _counter = 0;
 
-        public int No => throw new NotImplementedException();
+        private int _no; 
+        public string Description { get ; set; }
+        public string Name { get; set; }
 
-        public double Price { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public MenuType TheMenuType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int No { get { return _no; } }
+
+        public double Price { get ; set; }
+        public MenuType TheMenuType { get ; set; }
 
         public MenuItem(string name, double price, string description, MenuType menuType)
         {
-            
+            _no = _counter++; 
+            TheMenuType = menuType;
+            Name = name;
+            Price = price;
+            Description = description; 
+
         }
+
+
     }
 }

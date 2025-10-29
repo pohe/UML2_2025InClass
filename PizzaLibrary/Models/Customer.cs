@@ -9,17 +9,27 @@ namespace PizzaLibrary.Models
 {
     public class Customer : ICustomer
     {
+        private static int _counter =0; 
+        private int _id; 
         public string Address { get; set; }
         public bool ClubMember { get ; set ; }
 
-        public int Id => throw new NotImplementedException();
+        public int Id { get { return _id; } }
 
         public string Mobile { get; set; }
         public string Name { get; set; }
 
         public Customer(string name, string mobile, string address)
         {
-            
+            _id = _counter++;
+            Name = name;
+            Address = address;
+            Mobile = mobile; 
+        }
+
+        public override string ToString()
+        {
+            return $"Name {Name}  ";
         }
     }
 }

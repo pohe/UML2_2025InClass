@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UML2_2025InClass", "UML2_20
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaLibrary", "PizzaLibrary\PizzaLibrary.csproj", "{1A5BBC10-F059-4A5F-8270-7A391E5A915A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UML2Console", "UML2Console\UML2Console.csproj", "{91279105-73B6-4DA2-A4DA-076DBF21F78D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1A5BBC10-F059-4A5F-8270-7A391E5A915A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A5BBC10-F059-4A5F-8270-7A391E5A915A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A5BBC10-F059-4A5F-8270-7A391E5A915A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91279105-73B6-4DA2-A4DA-076DBF21F78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91279105-73B6-4DA2-A4DA-076DBF21F78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91279105-73B6-4DA2-A4DA-076DBF21F78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91279105-73B6-4DA2-A4DA-076DBF21F78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
