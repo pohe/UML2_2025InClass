@@ -28,7 +28,13 @@ namespace PizzaLibrary.Services
 
         public List<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            //List<Customer> returnList = new List<Customer>();
+            //foreach(Customer c in _customers.Values)
+            //{
+            //    returnList.Add(c);
+            //}
+            //return returnList; 
+            return _customers.Values.ToList();
         }
 
         public Customer GetCustomerByMobile(string mobile)
