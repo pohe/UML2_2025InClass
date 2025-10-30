@@ -21,11 +21,45 @@ namespace PizzaLibrary.Services
 
         }
 
-        public void AddCustomer(Customer customer)
+        public void PrintAllClubMembers()
+        {
+            foreach (Customer customer in _customers.Values)
+            {
+                if (customer.ClubMember == true)
+                {
+                    Console.WriteLine($"Customer {customer} is {customer.ClubMember}");
+                }
+            }
+        }
+
+        public void Print(List<Customer> list)
+        {
+            foreach (Customer customer in list)
+            {
+                Console.WriteLine(customer);
+            }
+        }
+
+        
+
+		public List<Customer> GetAllClubMembers()
+		{
+            List<Customer> clubMembers = new List<Customer>();
+			foreach (Customer customer in _customers.Values)
+			{
+				if (customer.ClubMember)
+				{
+					clubMembers.Add(customer);
+				}
+			}
+            return clubMembers;
+		}
+
+		public void AddCustomer(Customer customer)
         {
             throw new NotImplementedException();
         }
-
+        
         public List<Customer> GetAll()
         {
             //List<Customer> returnList = new List<Customer>();

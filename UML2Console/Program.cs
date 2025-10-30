@@ -13,3 +13,6 @@ foreach(Customer c in allCustomers)
 {
     Console.WriteLine(c.ToString());
 }
+Console.WriteLine("Clubmembers");
+//cRepo.PrintAllClubMembers();
+cRepo.Print(cRepo.GetAllClubMembers());
