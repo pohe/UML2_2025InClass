@@ -57,7 +57,11 @@ namespace PizzaLibrary.Services
 
 		public void AddCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            if (!_customers.ContainsKey(customer.Mobile))
+            {
+                _customers.Add(customer.Mobile, customer);
+            }
+  
         }
         
         public List<Customer> GetAll()
@@ -73,17 +77,25 @@ namespace PizzaLibrary.Services
 
         public Customer GetCustomerByMobile(string mobile)
         {
-            throw new NotImplementedException();
+            if (_customers.ContainsKey(mobile)) 
+            {
+                return _customers[mobile];
+            }
+            return null; 
         }
 
         public void PrintAllCustomers()
         {
-            throw new NotImplementedException();
+
+            foreach(KeyValuePair<string, Customer> c in _customers)
+            {
+                Console.WriteLine(c.Value);
+            }
         }
 
         public void RemoveCustomer(string mobile)
         {
-            throw new NotImplementedException();
+            _customers.Remove(mobile);
         }
     }
 }

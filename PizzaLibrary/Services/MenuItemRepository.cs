@@ -12,7 +12,9 @@ namespace PizzaLibrary.Services
     public class MenuItemRepository : IMenuItemRepository
     {
         private List<MenuItem> _menuItemList; 
-        public int Count => throw new NotImplementedException();
+        public int Count { 
+            get { return _menuItemList.Count; } 
+        }
 
         public MenuItemRepository()
         {
@@ -22,27 +24,83 @@ namespace PizzaLibrary.Services
 
         public void AddMenuItem(MenuItem menuItem)
         {
-            throw new NotImplementedException();
+            if (!MenuItemNameExist(menuItem.Name))
+            {
+                _menuItemList.Add(menuItem);
+            }
+            
+        }
+        private bool MenuItemNameExist(string name)
+        {
+            foreach(MenuItem m in _menuItemList)
+            {
+                if (m.Name == name)
+                {
+                    return true; 
+                }
+            }
+            return false; 
         }
 
         public List<MenuItem> GetAll()
         {
-            throw new NotImplementedException();
+            //List<MenuItem> returMenu = new List<MenuItem>();
+            //foreach(MenuItem m in _menuItemList)
+            //{
+            //    returMenu.Add(m);
+            //}
+            //return returMenu;
+            return _menuItemList;
         }
 
         public MenuItem GetMenuItemByNo(int no)
         {
-            throw new NotImplementedException();
+            foreach(MenuItem m in _menuItemList)
+            {
+                if (m.No == no)
+                {
+                    return m;
+                }
+            }
+            return null;
         }
 
         public void PrintAllMenuItems()
         {
-            throw new NotImplementedException();
+            foreach(MenuItem m in _menuItemList)
+            {
+                Console.WriteLine(m);
+            }
         }
 
         public void RemoveMenuItem(int no)
         {
-            throw new NotImplementedException();
+            //for(int i = 0; i<_menuItemList.Count; i++)
+            //{
+            //    if (_menuItemList[i].No == no )
+            //    {
+            //        _menuItemList.RemoveAt(i);
+            //        return;
+            //    }
+            //}
+            //alternativt
+            //for (int i = 0; i < _menuItemList.Count; i++)
+            //{
+            //    if (_menuItemList[i].No == no)
+            //    {
+            //        _menuItemList.Remove(_menuItemList[i]);
+            //        return;
+            //    }
+            //}
+            //Alternativt:
+            MenuItem mTOBeRemoved = GetMenuItemByNo(no);
+            if (mTOBeRemoved != null)
+            {
+                _menuItemList.Remove(mTOBeRemoved);
+            }
+            //else
+            //    return; 
+
         }
     }
 }
