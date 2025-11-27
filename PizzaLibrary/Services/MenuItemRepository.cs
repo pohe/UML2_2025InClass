@@ -142,11 +142,11 @@ namespace PizzaLibrary.Services
             MenuItem menuItem = null;
             foreach (MenuItem m in _menuItemList)
             {
-                if (m.TheMenuType == MenuType.PIZZECLASSSICHE || m.TheMenuType == MenuType.PIZZESPECIALI )
+                if (m.TheMenuType == MenuType.PIZZECLASSSICHE || m.TheMenuType == MenuType.PIZZESPECIALI)
                 {
-                    if( menuItem == null || m.Price > menuItem.Price)
+                    if (menuItem == null || m.Price > menuItem.Price)
                     {
-                        menuItem = m; 
+                        menuItem = m;
                     }
                 }
             }
@@ -203,3 +203,4 @@ namespace PizzaLibrary.Services
 
         }
     }
+}

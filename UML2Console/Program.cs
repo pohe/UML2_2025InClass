@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using PizzaLibrary.Exceptions;
 using PizzaLibrary.Models;
 using PizzaLibrary.Services;
 
@@ -16,3 +17,25 @@ foreach(Customer c in allCustomers)
 Console.WriteLine("Clubmembers");
 //cRepo.PrintAllClubMembers();
 cRepo.Print(cRepo.GetAllClubMembers());
+
+CompanyInfo c1 = CompanyInfo.Instance;
+c1.Name = "Big Mamma";
+
+//CompanyInfo c2 = new CompanyInfo();
+
+CompanyInfo c2 = CompanyInfo.Instance;
+Console.WriteLine(c2.Name);
+try
+{
+    VIPCustomer vipC = new VIPCustomer("Peter", "121212", "Vej 123", 25);
+    vipC.Discount = 26;
+
+}
+catch(InvalidDiscountException ide)
+{
+    Console.WriteLine(ide.Message);
+}
+catch(Exception exp)
+{
+    Console.WriteLine(exp.Message);
+}
