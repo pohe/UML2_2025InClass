@@ -11,7 +11,7 @@ namespace PizzaLibrary.Models
     {
         private static int _counter =0; 
         private int _id; 
-        public string Address { get; set; }
+        public string Address { get; set; }//Maglegårdsvej 2, 4000 Roskilde
         public bool ClubMember { get ; set ; }
 
         public int Id { get { return _id; } }

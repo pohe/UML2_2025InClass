@@ -97,5 +97,20 @@ namespace PizzaLibrary.Services
         {
             _customers.Remove(mobile);
         }
+
+        public List<Customer> GetAllCustomersFromRoskilde()
+        {
+            List<Customer> roskildeC = new List<Customer>();
+            foreach(Customer c in _customers.Values)
+            {
+                if (c.Address.Contains("Roskilde"))
+                {
+                    roskildeC.Add(c);
+                }
+            }
+            return roskildeC;
+        }
+
+        
     }
 }
